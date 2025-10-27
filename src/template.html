@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo List</title>
 </head>
 <body>
-    
+    <div class="app-container">
+        <!-- Sidebar for projects -->
+        <aside class="sidebar">
+            <h2>Projects</h2>
+            <button id="new-project-btn">+ New Project</button>
+            <ul id="projects-list"></ul>
+        </aside>
+
+        <!-- Main content area -->
+        <main class="main-content">
+            <div class="current-project-header">
+                <h1 id="current-project-name">Default</h1>
+                <button id="new-todo-btn">+ New Todo</button>
+            </div>
+
+            <!-- Todos container -->
+            <div id="todos-container"></div>
+
+            <!-- Overlay and Expanded todo details (hidden by default) -->
+            <div id="todo-overlay" class="todo-overlay hidden"></div>
+            <div id="expanded-todo" class="expanded-todo hidden">
+                <button class="close-todo-details" id="close-todo-btn">&times;</button>
+                <div id="expanded-todo-content"></div>
+            </div>
+
+            <!-- Form for new todo (hidden by default) -->
+            <form id="todo-form" class="todo-form hidden">
+                <h3>Add New Todo</h3>
+                <input type="text" id="todo-title" placeholder="Title" required>
+                <textarea id="todo-description" placeholder="Description"></textarea>
+                <input type="date" id="todo-due-date" required>
+                <select id="todo-priority" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button type="submit">Add Todo</button>
+                <button type="button" id="cancel-todo-btn">Cancel</button>
+            </form>
+
+            <!-- Form for new project (hidden by default) -->
+            <form id="project-form" class="project-form hidden">
+                <h3>Create New Project</h3>
+                <input type="text" id="project-name" placeholder="Project Name" required>
+                <textarea id="project-description" placeholder="Description"></textarea>
+                <button type="submit">Create Project</button>
+                <button type="button" id="cancel-project-btn">Cancel</button>
+            </form>
+        </main>
+    </div>
 </body>
 </html>
